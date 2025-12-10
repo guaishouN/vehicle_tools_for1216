@@ -29,5 +29,12 @@
 import './index.css';
 
 console.log(
-  '👋 This message is being logged by "renderer.js", included via Vite',
+    '👋 This message is being logged by "renderer.js", included via Vite',
 );
+const btn = document.getElementById('btn');
+const versionDisplay = document.getElementById('versionDisplay');
+btn.onclick = async () => {
+    const version = await window.api.getVersion();
+    versionDisplay.innerText = `App Version dddd: ${version}`;
+};
+
